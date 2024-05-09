@@ -1,0 +1,63 @@
+﻿@inherits OrganisationsPageBase
+@page "/organisations"
+
+<head>
+    <Title>MartialBase® - Organisations</Title>
+</head>
+<body>
+    <h1>Organisations</h1>
+    @if (IsLoading)
+    {
+        <div class="d-flex justify-content-center" style="margin: 10%">
+            <div style="text-align: center">
+                <span class="spinner-border spinner-border-sm" role="status" style="width: 25px; height: 25px;"></span>
+                <p>Loading users...</p>
+            </div>
+        </div>
+    }
+    else if (HasErrorMessage)
+    {
+        <div class="d-flex justify-content-center" style="margin: 10%">
+            <div style="text-align: center">
+                <p>@ErrorMessage</p>
+            </div>
+        </div>
+    }
+    else
+    {
+        @if (ConfirmationMessageVisible)
+        {
+            <div class="alert @StatusClass">@ConfirmationMessage</div>
+        }
+
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Initials</th>
+                        <th>Name</th>
+                        <th>Parent Organisation</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Organisations != null)
+                    {
+                        @foreach (var organisation in Organisations)
+                        {
+                            <tr>
+                                <td>@organisation.Initials</td>
+
+                                <td>@organisation.Name</td>
+
+                                <td>@organisation.ParentOrganisationInitials</td>
+
+                                <td>@organisation.Address.FullAddress</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</body>

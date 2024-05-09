@@ -1,0 +1,85 @@
+﻿@inherits UserManagementPageBase
+@page "/users"
+
+<head>
+    <Title>MartialBase® - Users</Title>
+</head>
+<body>
+    <h1>User Management</h1>
+    @if (IsLoading)
+    {
+        <div class="d-flex justify-content-center" style="margin: 10%">
+            <div style="text-align: center">
+                <span class="spinner-border spinner-border-sm" role="status" style="width: 25px; height: 25px;"></span>
+                <p>Loading users...</p>
+            </div>
+        </div>
+    }
+    else if (HasErrorMessage)
+    {
+        <div class="d-flex justify-content-center" style="margin: 10%">
+            <div style="text-align: center">
+                <p>@ErrorMessage</p>
+            </div>
+        </div>
+    }
+    else
+    {
+        @if (ConfirmationMessageVisible)
+        {
+            <div class="alert @StatusClass">@ConfirmationMessage</div>
+        }
+
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Login</th>
+                        <th>Name</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (MartialBaseUsers != null)
+                    {
+                        @foreach (var martialBaseUser in MartialBaseUsers)
+                        {
+                            string userId = martialBaseUser.Id;
+                            Guid? personId = martialBaseUser.Person.Id;
+
+                            <tr>
+                                @if (martialBaseUser.AzureId == null)
+                                {
+                                    <td style="color: grey">@martialBaseUser.Person.Email</td>
+
+                                    <td style="color: grey">@martialBaseUser.Person.FullName</td>
+                                    <td>
+                                        <button class="btn btn-block btn-primary" @onclick="@(() => ShowEditPersonDialog(userId, personId))" style="color: rgb(255, 255, 255); background-color: rgb(49, 56, 215);" type="button">Edit Person</button>
+                                    </td>
+
+                                    <td>
+                                        <button class="btn btn-block btn-primary" @onclick="@(() => ShowManageUserDialog(userId, martialBaseUser.Person.FullName))" style="color: rgb(255, 255, 255); background-color: rgb(49, 56, 215);" type="button">Manage User</button>
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>@martialBaseUser.Person.Email</td>
+
+                                    <td>@martialBaseUser.Person.FullName</td>
+                                    <td>
+                                        <button class="btn btn-block btn-primary" @onclick="@(() => ShowEditPersonDialog(userId, personId))" style="color: rgb(255, 255, 255); background-color: rgb(49, 56, 215);" type="button">Edit Person</button>
+                                    </td>
+
+                                    <td>
+                                        <button class="btn btn-block btn-primary" @onclick="@(() => ShowManageUserDialog(userId, martialBaseUser.Person.FullName))" style="color: rgb(255, 255, 255); background-color: rgb(49, 56, 215);" type="button">Manage User</button>
+                                    </td>
+                                }
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</body>

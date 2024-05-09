@@ -1,0 +1,18 @@
+﻿@page "/confirm"
+@inherits ConfirmationPageBase
+@layout BlankLayout
+
+<div style="margin-top: 50px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <img class="img-fluid d-block m-auto" src="img/MartialBase_Black.png" height="auto" width="50%">
+                <p class="text-center d-block" style="text-align: center;margin-top: 2%;">@ConfirmationMessage</p>
+                @if (HasReturnLink)
+                {
+                    <p class="d-block text-center" style="text-align: center; margin-top: 2%;"><a href="@ReturnLink">@ClickHereString</a> @ActionString</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>

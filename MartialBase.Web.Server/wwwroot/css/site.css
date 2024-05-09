@@ -1,0 +1,324 @@
+@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+
+.validation-message {
+    font-size: 18px;
+    text-indent: 10px;
+    color: red;
+}
+
+html, body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+a, .btn-link { color: #0366d6; }
+
+.blazored-modal-content {
+    max-height: 75vh;
+    max-width: 75vw;
+    overflow-y: auto;
+}
+
+#blazor-error-ui {
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+#blazor-error-ui .dismiss {
+    cursor: pointer;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.5rem;
+}
+
+.btn-primary {
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+    color: #fff;
+    font-size: 18px;
+}
+
+app {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.content {
+    padding-top: 1.1rem;
+}
+
+.d-block {
+    display: block !important;
+}
+
+.footer {
+    bottom: 0;
+    font-size: 20px;
+    left: 0;
+    line-height: 60px; /* Vertically center the text there */
+    position: fixed;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.form-label-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.form-label-group input,
+.form-label-group label {
+    height: 3.125rem;
+    padding: .75rem;
+}
+
+.form-label-group label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    margin-bottom: 0; /* Override default `<label>` margin */
+    line-height: 0.9;
+    color: #495057;
+    pointer-events: none;
+    cursor: text; /* Match the input under the label */
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    transition: all .1s ease-in-out;
+}
+
+.form-label-group input::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.form-label-group input::-moz-placeholder {
+    color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
+    color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder {
+    color: transparent;
+}
+
+.form-label-group input::placeholder {
+    color: transparent;
+}
+
+.form-label-group input:not(:-moz-placeholder-shown) {
+    padding-top: 1.25rem;
+    padding-bottom: .25rem;
+}
+
+.form-label-group input:not(:-ms-input-placeholder) {
+    padding-top: 1.25rem;
+    padding-bottom: .25rem;
+}
+
+.form-label-group input:not(:placeholder-shown) {
+    padding-top: 1.25rem;
+    padding-bottom: .25rem;
+}
+
+.form-label-group input:not(:-moz-placeholder-shown) ~ label {
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    font-size: 15px;
+    color: #777;
+}
+
+.form-label-group input:not(:-ms-input-placeholder) ~ label {
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    font-size: 15px;
+    color: #777;
+}
+
+.form-label-group input:not(:placeholder-shown) ~ label {
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    font-size: 15px;
+    color: #777;
+}
+
+.form-control {
+    font-size: 18px;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.invalid {
+    outline: 1px solid red;
+}
+
+.m-auto {
+    margin: auto !important;
+}
+
+.main {
+    flex: 1;
+}
+
+.main .top-row {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #d6d5d5;
+    justify-content: flex-end;
+}
+
+.main .top-row > a, .main .top-row .btn-link {
+    margin-left: 1.5rem;
+    white-space: nowrap;
+}
+
+.main .top-row a:first-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.nav-link {
+    font-size: 20px;
+}
+
+.navbar-toggler {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar {
+    background-image: url(/img/org-bg.jpg);
+}
+
+.sidebar .top-row {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.sidebar .navbar-brand {
+    font-size: 1.1rem;
+}
+
+.sidebar .navbar-brand-img {
+    height: auto;
+    max-width: 200px;
+}
+
+.sidebar .oi {
+    font-size: 1.1rem;
+    top: -2px;
+    vertical-align: text-top;
+    width: 2rem;
+}
+
+.sidebar .nav-item {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+}
+
+.sidebar .nav-item:first-of-type {
+    padding-top: 1rem;
+}
+
+.sidebar .nav-item:last-of-type {
+    padding-bottom: 1rem;
+}
+
+.sidebar .nav-item a {
+    align-items: center;
+    border-radius: 4px;
+    color: #d7d7d7;
+    display: flex;
+    height: 3rem;
+    line-height: 3rem;
+}
+
+.sidebar .nav-item a.active {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: white;
+}
+
+.sidebar .nav-item a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.title {
+    color: black;
+    padding-left: 25px;
+}
+
+.top-row {
+    align-items: center;
+    display: flex;
+    height: 3.5rem;
+}
+
+.valid.modified:not([type=checkbox]) { outline: 1px solid #26b050; }
+
+/* Fallback for Edge
+-------------------------------------------------- */
+@supports (-ms-ime-align: auto) {
+  .form-label-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+
+  .form-label-group label {
+    position: static;
+  }
+
+  .form-label-group input::-ms-input-placeholder {
+    color: #777;
+  }
+}
+
+@media (max-width: 767.98px) {
+    .main .top-row:not(.auth) { display: none; }
+
+    .main .top-row.auth { justify-content: space-between; }
+
+    .main .top-row a, .main .top-row .btn-link { margin-left: 0; }
+}
+
+@media (min-width: 768px) {
+    app { flex-direction: row; }
+
+    .sidebar {
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        width: 250px;
+    }
+
+    .main .top-row {
+        position: sticky;
+        top: 0;
+    }
+
+    .main > div {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+
+    .navbar-toggler { display: none; }
+
+    .sidebar .collapse {
+        /* Never collapse the sidebar for wide screens */
+        display: block;
+    }
+}

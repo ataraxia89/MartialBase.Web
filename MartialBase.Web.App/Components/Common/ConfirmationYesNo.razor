@@ -1,0 +1,9 @@
+﻿@inherits ConfirmationYesNoBase
+
+<div class="col-md-12">
+    <p class="text-center d-block" style="text-align: center;margin-top: 2%;">@ConfirmationMessage</p>
+    <div class="container" style="display: flex; justify-content: center">
+        <button class="btn btn-block btn-primary" style="color: rgb(255, 255, 255); background-color: rgb(49, 56, 215); font-size: 20px; min-width: 100px; margin: 5px" type="button" @onclick="@Yes">Yes</button>
+        <button class="btn btn-block btn-primary" style="color: rgb(255, 255, 255); background-color: rgb(255, 94, 94); font-size: 20px; min-width: 100px; margin: 5px" type="button" @onclick="@No">No</button>
+    </div>
+</div>

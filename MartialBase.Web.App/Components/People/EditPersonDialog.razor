@@ -1,0 +1,143 @@
+﻿@inherits EditPersonDialogBase
+
+@if (IsLoading)
+{
+    <div class="d-flex justify-content-center" style="margin: 10%">
+        <div style="text-align: center">
+            <span class="spinner-border spinner-border-sm" role="status" style="width: 25px; height: 25px;"></span>
+            <p>@LoadingMessage</p>
+        </div>
+    </div>
+}
+else
+{
+    if (HasErrorMessage)
+    {
+        <div class="d-flex justify-content-center" style="margin: 10%">
+            <div style="text-align: center">
+                <p>@ErrorMessage</p>
+                <button class="btn btn-block btn-primary" style="color: rgb(255, 255, 255); background-color: rgb(49, 56, 215);" type="button" @onclick="@HideError">Close</button>
+            </div>
+        </div>
+    }
+    else
+    {
+<EditForm Model="@UpdatePerson" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    
+    <div style="float: left; margin: 5px">
+        <fieldset>
+            <legend>Person Details</legend>
+        
+            <div class="form-label-group">
+                <InputText @bind-Value="UpdatePerson.FirstName" class="form-control" id="firstName" placeholder="First name" />
+                <ValidationMessage For="@(() => UpdatePerson.FirstName)" />
+                <label for="firstName">First name</label>
+            </div>
+
+            <div class="form-label-group">
+                <InputText @bind-Value="UpdatePerson.MiddleName" class="form-control" id="middleName" placeholder="Middle name" />
+                <ValidationMessage For="@(() => UpdatePerson.MiddleName)" />
+                <label for="middleName">Middle name</label>
+            </div>
+
+            <div class="form-label-group">
+                <InputText @bind-Value="UpdatePerson.LastName" class="form-control" id="lastName" placeholder="Last name" />
+                <ValidationMessage For="@(() => UpdatePerson.LastName)" />
+                <label for="lastName">Last name</label>
+            </div>
+
+            <div class="form-label-group">
+                <InputText @bind-Value="UpdatePerson.Email" class="form-control" id="email" placeholder="Email" />
+                <ValidationMessage For="@(() => UpdatePerson.Email)" />
+                <label for="email">Email</label>
+            </div>
+
+            <div class="form-label-group">
+                <InputText @bind-Value="UpdatePerson.MobileNo" class="form-control" id="mobileNo" placeholder="Mobile no." />
+                <ValidationMessage For="@(() => UpdatePerson.MobileNo)" />
+                <label for="mobileNo">Mobile no.</label>
+            </div>
+        </fieldset>
+    </div>
+    
+    <div style="float: left; margin: 5px">
+        <fieldset>
+            <legend>Address Details</legend>
+
+            <div class="form-label-group">
+                <InputText @bind-Value="UpdatePerson.Address.Line1" class="form-control" id="addressLine1" placeholder="Address line 1" />
+                <ValidationMessage For="@(() => UpdatePerson.Address.Line1)" />
+                <label for="addressLine1">Address line 1</label>
+            </div>
+
+            <div class="form-label-group">
+                <InputText @bind-Value="UpdatePerson.Address.Line2" class="form-control" id="addressLine2" placeholder="Address line 2" />
+                <ValidationMessage For="@(() => UpdatePerson.Address.Line2)" />
+                <label for="addressLine2">Address line 2</label>
+            </div>
+
+            <div class="form-label-group">
+                <InputText @bind-Value="UpdatePerson.Address.Line3" class="form-control" id="addressLine3" placeholder="Address line 3" />
+                <ValidationMessage For="@(() => UpdatePerson.Address.Line3)" />
+                <label for="addressLine3">Address line 3</label>
+            </div>
+
+            <div class="form-label-group">
+                <InputText @bind-Value="UpdatePerson.Address.Town" class="form-control" id="addressTown" placeholder="Address town" />
+                <ValidationMessage For="@(() => UpdatePerson.Address.Town)" />
+                <label for="addressTown">Address town</label>
+            </div>
+
+            <div class="form-label-group">
+                <InputText @bind-Value="UpdatePerson.Address.County" class="form-control" id="addressCounty" placeholder="Address county" />
+                <ValidationMessage For="@(() => UpdatePerson.Address.County)" />
+                <label for="addressCounty">Address county</label>
+            </div>
+
+            <div class="form-label-group">
+                <InputText @bind-Value="UpdatePerson.Address.PostCode" class="form-control" id="addressPostCode" placeholder="Address post code" />
+                <ValidationMessage For="@(() => UpdatePerson.Address.PostCode)" />
+                <label for="addressPostCode">Address post code</label>
+            </div>
+
+            <div class="form-group">
+                <select @bind="UpdatePerson.Address.CountryCode" class="form-control" id="addressCountry" placeholder="Address country">
+                    @foreach (var country in Countries)
+                    {
+                        <option value="@country.Code">@country.Name</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-label-group">
+                <InputText @bind-Value="UpdatePerson.Address.LandlinePhone" class="form-control" id="addressLandlinePhone" placeholder="Address landline phone" />
+                <ValidationMessage For="@(() => UpdatePerson.Address.LandlinePhone)" />
+                <label for="addressLandlinePhone">Address landline phone</label>
+            </div>
+        </fieldset>
+    </div>
+
+    <div class="form-group" id="submitButton">
+        @if (IsLoading)
+        {
+            <button class="btn btn-block btn-primary" disabled style="color: rgb(255, 255, 255); background-color: rgb(49, 56, 215);">
+                <span class="spinner-border spinner-border-sm" role="status" style="width: 25px; height: 25px;"></span>
+                <span>Please wait...</span>
+            </button>
+
+            <button class="btn btn-block btn-primary" disabled style="color: rgb(255, 255, 255); background-color: rgb(49, 56, 215);">
+                <span>Close</span>
+            </button>
+        }
+        else
+        {
+            <button class="btn btn-block btn-primary" style="color: rgb(255, 255, 255); background-color: rgb(49, 56, 215);" type="submit">Update Details</button>
+
+            <button class="btn btn-block btn-primary" style="color: rgb(255, 255, 255); background-color: rgb(49, 56, 215);" type="button" @onclick="@Cancel">Cancel</button>
+        }
+    </div>
+
+</EditForm>
+    }
+}

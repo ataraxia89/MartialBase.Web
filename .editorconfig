@@ -1,0 +1,157 @@
+[*.cs]
+
+# SA1028: Code should not contain trailing whitespace
+dotnet_diagnostic.sa1028.severity=error
+
+# SA1101: Prefix local calls with this
+dotnet_diagnostic.sa1101.severity=none
+
+# SA1309: Field names should not begin with underscore
+dotnet_diagnostic.sa1309.severity=none
+
+# SA1413: Use trailing comma in multi-line initializers
+dotnet_diagnostic.sa1413.severity=none
+
+# SA1200: Using directives should be placed correctly
+dotnet_diagnostic.sa1200.severity=none
+
+# SA1516: Elements should be separated by blank line
+dotnet_diagnostic.sa1516.severity=error
+
+# SA1514: Element documentation header should be preceded by blank line
+dotnet_diagnostic.sa1514.severity=error
+
+# SA1128: Put constructor initializers on their own line
+dotnet_diagnostic.sa1128.severity=error
+
+# SA1012: Opening braces should be spaced correctly
+dotnet_diagnostic.sa1012.severity=error
+
+# SA1402: File may only contain a single type
+dotnet_diagnostic.sa1402.severity=error
+
+# SA1649: File name should match first type name
+dotnet_diagnostic.sa1649.severity=error
+
+# SA1127: Generic type constraints should be on their own line
+dotnet_diagnostic.sa1127.severity=error
+
+# SA1119: Statement should not use unnecessary parenthesis
+dotnet_diagnostic.sa1119.severity=error
+
+# SA1210: Using directives should be ordered alphabetically by namespace
+dotnet_diagnostic.sa1210.severity=error
+
+# IDE0005: Using directive is unnecessary.
+dotnet_diagnostic.IDE0005.severity = error
+
+# SA1118: Parameter should not span multiple lines
+dotnet_diagnostic.SA1118.severity = none
+
+# SA1503: Braces should not be omitted
+dotnet_diagnostic.SA1503.severity = error
+
+# SA1122: Use string.Empty for empty strings
+dotnet_diagnostic.SA1122.severity = error
+
+# SA1500: Braces for multi-line statements should not share line
+dotnet_diagnostic.SA1500.severity = error
+
+# SA1636: File header copyright text should match
+dotnet_diagnostic.SA1636.severity = none
+
+# SA1512: Single-line comments should not be followed by blank line
+dotnet_diagnostic.SA1512.severity = none
+
+# SA1515: Single-line comment should be preceded by blank line
+dotnet_diagnostic.SA1515.severity = error
+
+# SA1623: Property summary documentation should match accessors
+dotnet_diagnostic.SA1623.severity = none
+
+# SA1501: Statement should not be on a single line
+dotnet_diagnostic.SA1501.severity = error
+
+# SA1116: Split parameters should start on line after declaration
+dotnet_diagnostic.SA1116.severity = error
+
+# SA1117: Parameters should be on same line or separate lines
+dotnet_diagnostic.SA1117.severity = error
+
+# SA1313: Parameter names should begin with lower-case letter
+dotnet_diagnostic.SA1313.severity = error
+
+# SA1401: Fields should be private
+dotnet_diagnostic.SA1401.severity = error
+
+# SA1111: Closing parenthesis should be on line of last parameter
+dotnet_diagnostic.SA1111.severity = error
+
+# SA1005: Single line comments should begin with single space
+dotnet_diagnostic.SA1005.severity = error
+
+# SA1300: Element should begin with upper-case letter
+dotnet_diagnostic.SA1300.severity = error
+
+# SA1201: Elements should appear in the correct order
+dotnet_diagnostic.SA1201.severity = error
+
+# SA1202: Elements should be ordered by access
+dotnet_diagnostic.SA1202.severity = error
+
+# SA1205: Partial elements should declare access
+dotnet_diagnostic.SA1205.severity = error
+
+# SA1306: Field names should begin with lower-case letter
+dotnet_diagnostic.SA1306.severity = error
+
+# SA1204: Static elements should appear before instance elements
+dotnet_diagnostic.SA1204.severity = error
+
+# IDE0063: Use simple 'using' statement
+csharp_prefer_simple_using_statement = true:none
+
+# IDE0044: Add readonly modifier
+dotnet_style_readonly_field = true:warning
+
+# CS1591: Missing XML comment for publicly visible type or member
+dotnet_diagnostic.CS1591.severity = suggestion
+
+# SA1600: Elements should be documented
+dotnet_diagnostic.SA1600.severity = suggestion
+
+# SA1602: Enumeration items should be documented
+dotnet_diagnostic.SA1602.severity = suggestion
+
+# SA1611: Element parameters should be documented
+dotnet_diagnostic.SA1611.severity = suggestion
+
+# SA1642: Constructor summary documentation should begin with standard text
+dotnet_diagnostic.SA1642.severity = error
+
+# SA1629: Documentation text should end with a period
+dotnet_diagnostic.SA1629.severity = error
+
+# SA1615: Element return value should be documented
+dotnet_diagnostic.SA1615.severity = suggestion
+
+# CS1570: XML comment has badly formed XML
+dotnet_diagnostic.CS1570.severity = suggestion
+
+# IDE0059: Unnecessary assignment of a value
+csharp_style_unused_value_assignment_preference = discard_variable:error
+
+# SA1507: Code should not contain multiple blank lines in a row
+dotnet_diagnostic.SA1507.severity = error
+
+# SA1633: File should have header
+dotnet_diagnostic.SA1633.severity = error
+
+# SA1638: File header file name documentation should match file name
+dotnet_diagnostic.SA1638.severity = error
+
+# SA1601: Partial elements should be documented
+dotnet_diagnostic.SA1601.severity = error
+
+# SA1206: Declaration keywords should follow order
+dotnet_diagnostic.SA1206.severity = none

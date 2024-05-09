@@ -1,0 +1,191 @@
+﻿@inherits FindPersonDialogBase
+
+<div class="col-md-12">
+    <div class="container">
+        @if (IsSearching)
+        {
+            <div style="float: left; margin: 5px">
+                <fieldset>
+                    <div class="form-label-group">
+                        <input type="text" @bind="SearchFirstName" disabled class="form-control" id="searchFirstName" placeholder="First name" style="width: 160px" />
+                        <label for="searchFirstName">First name</label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div style="float: left; margin: 5px">
+                <fieldset>
+                    <div class="form-label-group">
+                        <input type="text" @bind="SearchMiddleName" disabled class="form-control" id="searchMiddleName" placeholder="Middle name" style="width: 160px" />
+                        <label for="searchMiddleName">Middle name</label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div style="float: left; margin: 5px">
+                <fieldset>
+                    <div class="form-label-group">
+                        <input type="text" @bind="SearchLastName" disabled class="form-control" id="searchLastName" placeholder="Last name" style="width: 160px" />
+                        <label for="searchLastName">Last name</label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div style="float: left; margin: 5px">
+                <fieldset>
+                    <div class="form-label-group">
+                        <input type="text" @bind="SearchEmail" disabled class="form-control" id="searchEmail" placeholder="Email" style="width: 160px" />
+                        <label for="searchEmail">Email</label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div style="float: left; margin: 5px">
+                <fieldset>
+                    <div class="form-label-group">
+                        <button disabled class="btn btn-block btn-primary" style="color: rgb(255, 255, 255); background-color: rgb(49, 56, 215); min-width: 110px; max-width: 150px;">
+                            <span class="spinner-border spinner-border-sm" role="status" style="width: 25px; height: 25px;"></span>
+                            <span style="font-size: 20px">Searching...</span>
+                        </button>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div style="float: left; margin: 5px">
+                <fieldset>
+                    <div class="form-label-group">
+                        <button disabled class="btn btn-block btn-primary" style="color: rgb(255, 255, 255); background-color: rgb(49, 56, 215); min-width: 110px; max-width: 150px; font-size: 20px" type="button">Cancel</button>
+                    </div>
+                </fieldset>
+            </div>
+        }
+        else
+        {
+            <div style="float: left; margin: 5px">
+                <fieldset>
+                    <div class="form-label-group">
+                        <input type="text" @bind="SearchFirstName" class="form-control" id="searchFirstName" placeholder="First name" style="width: 160px" />
+                        <label for="searchFirstName">First name</label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div style="float: left; margin: 5px">
+                <fieldset>
+                    <div class="form-label-group">
+                        <input type="text" @bind="SearchMiddleName" class="form-control" id="searchMiddleName" placeholder="Middle name" style="width: 160px" />
+                        <label for="searchMiddleName">Middle name</label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div style="float: left; margin: 5px">
+                <fieldset>
+                    <div class="form-label-group">
+                        <input type="text" @bind="SearchLastName" class="form-control" id="searchLastName" placeholder="Last name" style="width: 160px" />
+                        <label for="searchLastName">Last name</label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div style="float: left; margin: 5px">
+                <fieldset>
+                    <div class="form-label-group">
+                        <input type="text" @bind="SearchEmail" class="form-control" id="searchEmail" placeholder="Email" style="width: 160px" />
+                        <label for="searchEmail">Email</label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div style="float: left; margin: 5px">
+                <fieldset>
+                    <div class="form-label-group">
+                        <button class="btn btn-block btn-primary" @onclick="@Search" style="color: rgb(255, 255, 255); background-color: rgb(49, 56, 215); min-width: 110px; max-width: 150px; font-size: 20px" type="button">Search</button>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div style="float: left; margin: 5px">
+                <fieldset>
+                    <div class="form-label-group">
+                        <button class="btn btn-block btn-primary" @onclick="@Cancel" style="color: rgb(255, 255, 255); background-color: rgb(49, 56, 215); min-width: 110px; max-width: 150px; font-size: 20px" type="button">Cancel</button>
+                    </div>
+                </fieldset>
+            </div>
+        }
+    </div>
+
+            @if (IsSearching)
+            {
+                <div class="d-flex justify-content-center" style="clear: both; margin: 10%">
+                    <div style="text-align: center">
+                        <span class="spinner-border spinner-border-sm" role="status" style="width: 25px; height: 25px;"></span>
+                        <p>Searching, please wait...</p>
+                    </div>
+                </div>
+            }
+            else
+            {
+                @if (HasErrorMessage)
+                {
+                    <div class="d-flex justify-content-center" style="clear: both; margin: 10%">
+                        <div style="text-align: center">
+                            <p>@ErrorMessage</p>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    if (FoundPeople.Count == 0)
+                    {
+                        <div class="d-flex justify-content-center" style="clear: both; margin: 10%">
+                            <div style="text-align: center">
+                                <p>No results found</p>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="table-responsive" style="clear: both;">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>First Name</th>
+                                        <th>Middle Name</th>
+                                        <th>Last Name</th>
+                                        <th>Email</th>
+                                        <th>Location</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var foundPerson in FoundPeople)
+                                    {
+                                        string personId = foundPerson.Id.ToString();
+
+                                        <tr>
+                                            <td>
+                                                <button class="btn btn-block btn-primary" @onclick="@(() => SelectPerson(personId))" style="color: rgb(255, 255, 255); background-color: rgb(49, 56, 215);" type="button">Select</button>
+                                            </td>
+                                            <td>@foundPerson.FirstName</td>
+                                            <td>@foundPerson.MiddleName</td>
+                                            <td>@foundPerson.LastName</td>
+                                            <td>@foundPerson.Email</td>
+
+                                            @if (@foundPerson.Address != null)
+                                            {
+                                                <td>@foundPerson.Address.Town, @foundPerson.Address.County</td>
+                                            }
+                                            else
+                                            {
+                                                <td><i>(No details)</i></td>
+                                            }
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                }
+            }
+        </div>

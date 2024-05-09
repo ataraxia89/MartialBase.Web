@@ -1,0 +1,23 @@
+﻿<CascadingAuthenticationState>
+    <CascadingBlazoredModal HideCloseButton="true">
+        <Router AppAssembly="@typeof(App).Assembly">
+            <Found Context="routeData">
+                <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)"/>
+            </Found>
+            <NotFound>
+                <LayoutView Layout="@typeof(BlankLayout)">
+                    <div style="margin-top: 50px;">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <img class="img-fluid d-block m-auto" src="img/MartialBase_Black.png" height="auto" width="50%">
+                                    <p class="text-center d-block" style="text-align: center; margin-top: 2%;">Page not found.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </LayoutView>
+            </NotFound>
+        </Router>
+    </CascadingBlazoredModal>
+</CascadingAuthenticationState>

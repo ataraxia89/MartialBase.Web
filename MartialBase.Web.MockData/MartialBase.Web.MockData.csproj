@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MartialBase.API.Models" Version="1.0.21349.1" />
+    <PackageReference Include="MartialBase.FakeData" Version="1.0.23242.7" />
+    <PackageReference Include="System.Text.Json" Version="6.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MartialBase.Web.Data\MartialBase.Web.Data.csproj" />
+  </ItemGroup>
+
+</Project>

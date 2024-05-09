@@ -1,0 +1,63 @@
+﻿@inherits SchoolsPageBase
+@page "/schools"
+
+<head>
+    <Title>MartialBase® - Schools</Title>
+</head>
+<body>
+    <h1>Schools</h1>
+    @if (IsLoading)
+    {
+        <div class="d-flex justify-content-center" style="margin: 10%">
+            <div style="text-align: center">
+                <span class="spinner-border spinner-border-sm" role="status" style="width: 25px; height: 25px;"></span>
+                <p>Loading users...</p>
+            </div>
+        </div>
+    }
+    else if (HasErrorMessage)
+    {
+        <div class="d-flex justify-content-center" style="margin: 10%">
+            <div style="text-align: center">
+                <p>@ErrorMessage</p>
+            </div>
+        </div>
+    }
+    else
+    {
+        @if (ConfirmationMessageVisible)
+        {
+            <div class="alert @StatusClass">@ConfirmationMessage</div>
+        }
+
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Art</th>
+                        <th>Organisation</th>
+                        <th>School Name</th>
+                        <th>Head Instructor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Schools != null)
+                    {
+                        @foreach (var school in Schools)
+                        {
+                            <tr>
+                                <td>@school.ArtName</td>
+
+                                <td>@school.OrganisationName</td>
+                                
+                                <td>@school.Name</td>
+
+                                <td>@school.HeadInstructorName</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</body>

@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MartialBase.Web.App", "MartialBase.Web.App\MartialBase.Web.App.csproj", "{A714073C-3FC8-4549-A473-96AA93753D25}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CD9EA2C3-7777-4276-BA99-224F82820F22}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		DLLs\MartialBase.API.Models.dll = DLLs\MartialBase.API.Models.dll
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MartialBase.Web.Data", "MartialBase.Web.Data\MartialBase.Web.Data.csproj", "{513E3654-6062-4124-AE37-6EBB0025AB36}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MartialBase.Web.Server", "MartialBase.Web.Server\MartialBase.Web.Server.csproj", "{17774852-D728-4C46-AF43-0E2289F5D446}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MartialBase.Web.MockData", "MartialBase.Web.MockData\MartialBase.Web.MockData.csproj", "{8ED87BD0-4340-43CE-83A8-64994272D76D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A714073C-3FC8-4549-A473-96AA93753D25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A714073C-3FC8-4549-A473-96AA93753D25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A714073C-3FC8-4549-A473-96AA93753D25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A714073C-3FC8-4549-A473-96AA93753D25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{513E3654-6062-4124-AE37-6EBB0025AB36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{513E3654-6062-4124-AE37-6EBB0025AB36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{513E3654-6062-4124-AE37-6EBB0025AB36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{513E3654-6062-4124-AE37-6EBB0025AB36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17774852-D728-4C46-AF43-0E2289F5D446}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17774852-D728-4C46-AF43-0E2289F5D446}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17774852-D728-4C46-AF43-0E2289F5D446}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17774852-D728-4C46-AF43-0E2289F5D446}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ED87BD0-4340-43CE-83A8-64994272D76D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ED87BD0-4340-43CE-83A8-64994272D76D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ED87BD0-4340-43CE-83A8-64994272D76D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ED87BD0-4340-43CE-83A8-64994272D76D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9E50C84D-43C5-40F4-97DD-B92371A783EC}
+	EndGlobalSection
+EndGlobal

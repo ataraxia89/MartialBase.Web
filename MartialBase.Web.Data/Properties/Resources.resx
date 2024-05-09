@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddNewPersonOption" xml:space="preserve">
+    <value>Add New Person</value>
+  </data>
+  <data name="AddNewRecordTitle" xml:space="preserve">
+    <value>Add New Record?</value>
+  </data>
+  <data name="AddPersonDetailsTitle" xml:space="preserve">
+    <value>Add Person Details</value>
+  </data>
+  <data name="AssigningPersonToUser" xml:space="preserve">
+    <value>Assigning person to user...</value>
+  </data>
+  <data name="ChangeAssignedPersonOption" xml:space="preserve">
+    <value>Change Assigned Person</value>
+  </data>
+  <data name="ClickHere" xml:space="preserve">
+    <value>Click here</value>
+    <comment>Used for hyperlinks on the confirmation page.</comment>
+  </data>
+  <data name="ConfirmLockOutTitle" xml:space="preserve">
+    <value>Confirm Lock Out</value>
+  </data>
+  <data name="CreateNewPersonOrFindExistingPrompt" xml:space="preserve">
+    <value>Would you like to create a new person record or find an existing person to assign?</value>
+  </data>
+  <data name="DetailsForPersonUpdatedSuccessfully" xml:space="preserve">
+    <value>Details for '{0}' updated successfully.</value>
+    <comment>Includes a required parameter to insert a person's name.</comment>
+  </data>
+  <data name="EditAssignedRecordOption" xml:space="preserve">
+    <value>Edit Assigned Record</value>
+  </data>
+  <data name="EditExistingRecordPrompt" xml:space="preserve">
+    <value>Edit Existing Record?</value>
+  </data>
+  <data name="EditOrChangeAssignedPersonPrompt" xml:space="preserve">
+    <value>Would you like to edit the assigned person record or change the assigned person?</value>
+  </data>
+  <data name="EditPersonDetailsTitle" xml:space="preserve">
+    <value>Edit Person Details</value>
+  </data>
+  <data name="EmailConfirmationFailed" xml:space="preserve">
+    <value>Failed to confirm email.</value>
+  </data>
+  <data name="EmailConfirmationSuccessful" xml:space="preserve">
+    <value>Email confirmed! You can now log in using your credentials.</value>
+  </data>
+  <data name="EmailNotConfirmed" xml:space="preserve">
+    <value>Email address not confirmed.</value>
+    <comment>Requesting user has not confirmed their email address. Taken from ErrorResponseCode.EmailNotConfirmed.</comment>
+  </data>
+  <data name="ExpiredToken" xml:space="preserve">
+    <value>Provided authentication token has expired or has been revoked.</value>
+    <comment>The authentication token supplied in the request has expired or has been revoked. Taken from ErrorResponseCode.ExpiredToken.</comment>
+  </data>
+  <data name="FailedToAssignPersonToUser" xml:space="preserve">
+    <value>Failed to assign person to user.</value>
+  </data>
+  <data name="FailedToGetInvitationCodeForUser" xml:space="preserve">
+    <value>Failed to get invitation code for user.</value>
+  </data>
+  <data name="FailedToLoadOrganisations" xml:space="preserve">
+    <value>Failed to load organisations.</value>
+  </data>
+  <data name="FailedToLoadPersonDetails" xml:space="preserve">
+    <value>Failed to load person details.</value>
+  </data>
+  <data name="FailedToLoadSchools" xml:space="preserve">
+    <value>Failed to load schools.</value>
+  </data>
+  <data name="FailedToLoadSystemRoles" xml:space="preserve">
+    <value>Failed to load system roles.</value>
+  </data>
+  <data name="FailedToLoadUserDetails" xml:space="preserve">
+    <value>Failed to load user details.</value>
+  </data>
+  <data name="FailedToLoadUserRoles" xml:space="preserve">
+    <value>Failed to load user roles.</value>
+  </data>
+  <data name="FailedToLoadUsers" xml:space="preserve">
+    <value>Failed to load users.</value>
+  </data>
+  <data name="FailedToRetrieveCurrentUserDetails" xml:space="preserve">
+    <value>Failed to retrieve current user details.</value>
+  </data>
+  <data name="FailedToSetRolesForUser" xml:space="preserve">
+    <value>Failed to set roles for user.</value>
+  </data>
+  <data name="FindExistingPersonOption" xml:space="preserve">
+    <value>Find Existing Person</value>
+  </data>
+  <data name="FindPersonTitle" xml:space="preserve">
+    <value>Find Person</value>
+  </data>
+  <data name="GettingInvitationCode" xml:space="preserve">
+    <value>Getting invitation code...</value>
+  </data>
+  <data name="GreetingAfternoon" xml:space="preserve">
+    <value>Good Afternoon{0}</value>
+    <comment>Includes an optional parameter to insert a person's name.</comment>
+  </data>
+  <data name="GreetingEvening" xml:space="preserve">
+    <value>Good Evening{0}</value>
+    <comment>Includes an optional parameter to insert a person's name.</comment>
+  </data>
+  <data name="GreetingGeneric" xml:space="preserve">
+    <value>Welcome{0}</value>
+    <comment>Includes an optional parameter to insert a person's name.</comment>
+  </data>
+  <data name="GreetingMorning" xml:space="preserve">
+    <value>Good Morning{0}</value>
+    <comment>Includes an optional parameter to insert a person's name.</comment>
+  </data>
+  <data name="InsufficientUserRole" xml:space="preserve">
+    <value>Insufficient user role.</value>
+    <comment>Requesting user does not have the required user role(s) to carry out an operation. Taken from ErrorResponseCode.InsufficientUserRole.</comment>
+  </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>Invalid token provided.</value>
+    <comment>Taken from ErrorResponseCode.InvalidToken.</comment>
+  </data>
+  <data name="InvalidUsernameOrPassword" xml:space="preserve">
+    <value>Invalid username or password.</value>
+    <comment>Requesting user has provided an invalid username or password. Taken from ErrorResponseCode.InvalidUsernameOrPassword.</comment>
+  </data>
+  <data name="LoadingPersonDetails" xml:space="preserve">
+    <value>Loading person details...</value>
+  </data>
+  <data name="LoadingSystemRoles" xml:space="preserve">
+    <value>Loading system roles...</value>
+  </data>
+  <data name="LoadingUserDetails" xml:space="preserve">
+    <value>Loading user details...</value>
+  </data>
+  <data name="LoadingUserRoles" xml:space="preserve">
+    <value>Loading user roles...</value>
+  </data>
+  <data name="LoadingUsers" xml:space="preserve">
+    <value>Loading users...</value>
+  </data>
+  <data name="LoginFailed" xml:space="preserve">
+    <value>Login failed.</value>
+  </data>
+  <data name="LogoutFailed" xml:space="preserve">
+    <value>Logout failed.</value>
+  </data>
+  <data name="LogoutSuccessful" xml:space="preserve">
+    <value>You are now logged out. Thank you for using MartialBase®!</value>
+  </data>
+  <data name="ManageUserTitle" xml:space="preserve">
+    <value>Manage User</value>
+  </data>
+  <data name="NoAccessToPerson" xml:space="preserve">
+    <value>Requesting user has no access to requested person.</value>
+    <comment>Requesting user is attempting to access a Person who is not in an organisation or school which the requesting user is an admin/secretary of. Taken from ErrorResponseCode.NoAccessToPerson.</comment>
+  </data>
+  <data name="NoAssociatedPerson" xml:space="preserve">
+    <value>Requesting user has no associated person.</value>
+    <comment>Requesting user has no associated Person record (needed to check membership of schools/organisations). Taken from ErrorResponseCode.NoAssociatedPerson.</comment>
+  </data>
+  <data name="NoOrganisationAccess" xml:space="preserve">
+    <value>Requesting user has no access to organisation.</value>
+    <comment>Requesting user is attempting to interact with an organisation for which they do not have access. Taken from ErrorResponseCode.NoOrganisationAccess.</comment>
+  </data>
+  <data name="NotOrganisationAdmin" xml:space="preserve">
+    <value>Requesting user is not admin of organisation.</value>
+    <comment>Requesting user is attempting to access an organisation for which they are not an admin. Taken from ErrorResponseCode.NotOrganisationAdmin.</comment>
+  </data>
+  <data name="NotSchoolSecretary" xml:space="preserve">
+    <value>Requesting user is not a school secretary.</value>
+    <comment>Requesting user is attempting to access a school of which they are not a secretary. Taken from ErrorResponseCode.NotSchoolSecretary.</comment>
+  </data>
+  <data name="NotSchoolStudent" xml:space="preserve">
+    <value>Requesting user is not a school student.</value>
+    <comment>Requesting user is attempting to access a school of which they are not a student. Taken from ErrorResponseCode.NotSchoolStudent.</comment>
+  </data>
+  <data name="OrphanPersonEntity" xml:space="preserve">
+    <value>Person cannot become orphan entity.</value>
+    <comment>A person entity which depends on a parent cannot be removed if it has no other parent e.g. a person who is member of only one organisation can only be removed if they already belong to another organisation. Taken from ErrorResponseCode.OrphanPersonEntity.</comment>
+  </data>
+  <data name="OrphanSchoolEntity" xml:space="preserve">
+    <value>School cannot become orphan entity.</value>
+    <comment>A school entity which depends on a parent cannot be removed if it has no other parent e.g. a school who's organisation is being deleted first needs to be moved to another organisation or deleted itself. Taken from ErrorResponseCode.OrphanSchoolEntity.</comment>
+  </data>
+  <data name="PersonAddedToUser" xml:space="preserve">
+    <value>Person '{0}' added to user.</value>
+    <comment>Includes a required parameter to insert a person's name.</comment>
+  </data>
+  <data name="RegisterNewUser" xml:space="preserve">
+    <value>Registration submitted. Please check your emails for a confirmation link.</value>
+  </data>
+  <data name="RegisterNewUserFailed" xml:space="preserve">
+    <value>Failed to register new user.</value>
+  </data>
+  <data name="ResetFailed" xml:space="preserve">
+    <value>Password reset failed.</value>
+  </data>
+  <data name="ResetRequestFailed" xml:space="preserve">
+    <value>Failed to request password reset.</value>
+  </data>
+  <data name="ResetRequestSent" xml:space="preserve">
+    <value>Password reset request sent. Please check your emails for a confirmation link.</value>
+  </data>
+  <data name="ResetSuccess" xml:space="preserve">
+    <value>Password reset successfully! You can now log in using your new credentials.</value>
+  </data>
+  <data name="RetrievingCurrentUserDetails" xml:space="preserve">
+    <value>Retrieving current user details...</value>
+  </data>
+  <data name="SavingUserRoles" xml:space="preserve">
+    <value>Saving user roles...</value>
+  </data>
+  <data name="SuccessfullyRetrievedInvitationCode" xml:space="preserve">
+    <value>Successfully retrieved invitation code: {0}</value>
+  </data>
+  <data name="ToReturnToLogin" xml:space="preserve">
+    <value>to return to the login page.</value>
+    <comment>Used to append to hyperlinks on the confirmation page.</comment>
+  </data>
+  <data name="UnknownError" xml:space="preserve">
+    <value>An unknown error occurred.</value>
+    <comment>Taken from ErrorResponseCode.UnknownError.</comment>
+  </data>
+  <data name="UserLockedOut" xml:space="preserve">
+    <value>Account has been locked out, please try again in 10 minutes.</value>
+    <comment>Requesting user has been locked out. Taken from ErrorResponseCode.UserLockedOut.</comment>
+  </data>
+  <data name="UserRolesUpdatedSuccessfully" xml:space="preserve">
+    <value>User roles updated successfully.</value>
+  </data>
+</root>

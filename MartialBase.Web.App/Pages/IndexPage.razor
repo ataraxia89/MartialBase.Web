@@ -1,0 +1,37 @@
+﻿@page "/"
+@attribute [Authorize]
+@inherits IndexPageBase
+
+<head>
+    <Title>MartialBase® - Home</Title>
+</head>
+<body>
+    <div>
+        @if (IsLoadingCurrentPerson)
+        {
+            <div class="d-flex justify-content-center" style="margin: 10%">
+                <div style="text-align: center">
+                    <span class="spinner-border spinner-border-sm" role="status" style="width: 25px; height: 25px;"></span>
+                    <p>@CurrentPersonLoadingMessage</p>
+                </div>
+            </div>
+        }
+        else
+        {
+            if (HasLoadingPersonErrorMessage)
+            {
+                <div class="d-flex justify-content-center" style="margin: 10%">
+                    <div style="text-align: center">
+                        <p>@LoadingPersonErrorMessage</p>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <CascadingValue Value="@CurrentPersonId" Name="PersonId">
+                    <PersonDetailsComponent />
+                </CascadingValue>
+            }
+        }
+    </div>
+</body>

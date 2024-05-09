@@ -1,0 +1,204 @@
+﻿@inherits AddPersonDialogBase
+
+@if (IsLoading)
+{
+    <div class="d-flex justify-content-center" style="margin: 10%">
+        <div style="text-align: center">
+            <span class="spinner-border spinner-border-sm" role="status" style="width: 25px; height: 25px;"></span>
+            <p>@LoadingMessage</p>
+        </div>
+    </div>
+}
+else
+{
+    if (HasErrorMessage)
+    {
+        <div class="d-flex justify-content-center" style="margin: 10%">
+            <div style="text-align: center">
+                <p>@ErrorMessage</p>
+                <button class="btn btn-block btn-primary" style="color: rgb(255, 255, 255); background-color: rgb(49, 56, 215);" type="button" @onclick="@HideError">Close</button>
+            </div>
+        </div>
+    }
+    else
+    {
+<EditForm Model="@CreatePerson" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+
+    <div style="float: left; margin: 5px">
+        <fieldset>
+            <legend>Person Details</legend>
+
+            <div class="form-label-group">
+                <InputText @bind-Value="CreatePerson.FirstName" class="form-control" id="firstName" placeholder="First name" />
+                <ValidationMessage For="@(() => CreatePerson.FirstName)" />
+                <label for="firstName">First name</label>
+            </div>
+
+            <div class="form-label-group">
+                <InputText @bind-Value="CreatePerson.MiddleName" class="form-control" id="middleName" placeholder="Middle name" />
+                <ValidationMessage For="@(() => CreatePerson.MiddleName)" />
+                <label for="middleName">Middle name</label>
+            </div>
+
+            <div class="form-label-group">
+                <InputText @bind-Value="CreatePerson.LastName" class="form-control" id="lastName" placeholder="Last name" />
+                <ValidationMessage For="@(() => CreatePerson.LastName)" />
+                <label for="lastName">Last name</label>
+            </div>
+
+            <div class="form-label-group">
+                <InputDate @bind-Value="DateOfBirth" class="form-control" id="dateOfBirth" placeholder="Date of birth" />
+                <label for="dateOfBirth">Date of birth</label>
+            </div>
+
+            <div class="form-label-group">
+                <InputText @bind-Value="CreatePerson.Email" class="form-control" id="email" placeholder="Email" />
+                <ValidationMessage For="@(() => CreatePerson.Email)" />
+                <label for="email">Email</label>
+            </div>
+
+            <div class="form-label-group">
+                <InputText @bind-Value="CreatePerson.MobileNo" class="form-control" id="mobileNo" placeholder="Mobile no." />
+                <ValidationMessage For="@(() => CreatePerson.MobileNo)" />
+                <label for="mobileNo">Mobile no.</label>
+            </div>
+        </fieldset>
+    </div>
+
+    <div style="float: left; margin: 5px">
+        <fieldset>
+            <legend>Address Details</legend>
+
+            <div class="form-label-group">
+                <InputText @bind-Value="CreatePerson.Address.Line1" class="form-control" id="addressLine1" placeholder="Address line 1" />
+                <ValidationMessage For="@(() => CreatePerson.Address.Line1)" />
+                <label for="addressLine1">Address line 1</label>
+            </div>
+
+            <div class="form-label-group">
+                <InputText @bind-Value="CreatePerson.Address.Line2" class="form-control" id="addressLine2" placeholder="Address line 2" />
+                <ValidationMessage For="@(() => CreatePerson.Address.Line2)" />
+                <label for="addressLine2">Address line 2</label>
+            </div>
+
+            <div class="form-label-group">
+                <InputText @bind-Value="CreatePerson.Address.Line3" class="form-control" id="addressLine3" placeholder="Address line 3" />
+                <ValidationMessage For="@(() => CreatePerson.Address.Line3)" />
+                <label for="addressLine3">Address line 3</label>
+            </div>
+
+            <div class="form-label-group">
+                <InputText @bind-Value="CreatePerson.Address.Town" class="form-control" id="addressTown" placeholder="Address town" />
+                <ValidationMessage For="@(() => CreatePerson.Address.Town)" />
+                <label for="addressTown">Address town</label>
+            </div>
+
+            <div class="form-label-group">
+                <InputText @bind-Value="CreatePerson.Address.County" class="form-control" id="addressCounty" placeholder="Address county" />
+                <ValidationMessage For="@(() => CreatePerson.Address.County)" />
+                <label for="addressCounty">Address county</label>
+            </div>
+
+            <div class="form-label-group">
+                <InputText @bind-Value="CreatePerson.Address.PostCode" class="form-control" id="addressPostCode" placeholder="Address post code" />
+                <ValidationMessage For="@(() => CreatePerson.Address.PostCode)" />
+                <label for="addressPostCode">Address post code</label>
+            </div>
+
+            <div class="form-group">
+                <select @bind="CreatePerson.Address.CountryCode" class="form-control" id="addressCountry" placeholder="Address country">
+                    @foreach (var country in Countries)
+                    {
+                        <option value="@country.Code">@country.Name</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-label-group">
+                <InputText @bind-Value="CreatePerson.Address.LandlinePhone" class="form-control" id="addressLandlinePhone" placeholder="Address landline phone" />
+                <ValidationMessage For="@(() => CreatePerson.Address.LandlinePhone)" />
+                <label for="addressLandlinePhone">Address landline phone</label>
+            </div>
+        </fieldset>
+    </div>
+
+    <div style="float: left; margin: 5px">
+        <fieldset>
+            <legend>Organisation/School</legend>
+
+            <div class="form-group">
+                @if (CanSelectOrganisation)
+                {
+                    <select @onchange="OnOrganisationChanged" value="@OrganisationId" class="form-control" id="organisation" placeholder="Organisation">
+                        @foreach (var organisation in Organisations)
+                        {
+                            <option value="@organisation.Id">@organisation.Name</option>
+                        }
+                    </select>
+                }
+                else
+                {
+                    <select disabled value="@OrganisationId" class="form-control" id="organisation" placeholder="Organisation">
+                        @foreach (var organisation in Organisations)
+                        {
+                            <option value="@organisation.Id">@organisation.Name</option>
+                        }
+                    </select>
+                }
+            </div>
+
+            <div class="form-group">
+                @if (LoadingSchools)
+                {
+                    <select disabled value="Loading schools..." class="form-control" id="school" placeholder="School">
+                    </select>
+                }
+                else
+                {
+                    @if (CanSelectSchool)
+                    {
+                        <select @bind="SchoolId" class="form-control" id="school" placeholder="School">
+                            @foreach (var school in Schools)
+                            {
+                                <option value="@school.Id">@school.Name</option>
+                            }
+                        </select>
+                    }
+                    else
+                    {
+                        <select disabled value="@SchoolId" class="form-control" id="school" placeholder="School">
+                            @foreach (var school in Schools)
+                            {
+                                <option value="@school.Id">@school.Name</option>
+                            }
+                        </select>
+                    }
+                }
+            </div>
+        </fieldset>
+    </div>
+
+        <div class="form-group" id="submitButton">
+            @if (IsLoading)
+            {
+                <button class="btn btn-block btn-primary" disabled style="color: rgb(255, 255, 255); background-color: rgb(49, 56, 215);">
+                    <span class="spinner-border spinner-border-sm" role="status" style="width: 25px; height: 25px;"></span>
+                    <span>Please wait...</span>
+                </button>
+
+                <button class="btn btn-block btn-primary" disabled style="color: rgb(255, 255, 255); background-color: rgb(49, 56, 215);">
+                    <span>Close</span>
+                </button>
+            }
+            else
+            {
+                <button class="btn btn-block btn-primary" style="color: rgb(255, 255, 255); background-color: rgb(49, 56, 215);" type="submit">Update Details</button>
+
+                <button class="btn btn-block btn-primary" style="color: rgb(255, 255, 255); background-color: rgb(49, 56, 215);" type="button" @onclick="@Cancel">Cancel</button>
+            }
+        </div>
+
+</EditForm>
+    }
+}

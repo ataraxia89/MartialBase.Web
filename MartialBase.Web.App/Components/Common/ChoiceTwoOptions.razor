@@ -1,0 +1,10 @@
+﻿@inherits ChoiceTwoOptionsBase
+
+<div class="col-md-12">
+    <p class="text-center d-block" style="text-align: center;margin-top: 2%;">@ConfirmationMessage</p>
+    <div class="container" style="display: flex; justify-content: center">
+        <button class="btn btn-block btn-primary" style="color: rgb(255, 255, 255); background-color: rgb(49, 56, 215); font-size: 20px; min-width: 100px; margin: 5px" type="button" @onclick="@Option1">@Option1Text</button>
+        <button class="btn btn-block btn-primary" style="color: rgb(255, 255, 255); background-color: rgb(49, 56, 215); font-size: 20px; min-width: 100px; margin: 5px" type="button" @onclick="@Option2">@Option2Text</button>
+        <button class="btn btn-block btn-primary" style="color: rgb(255, 255, 255); background-color: rgb(49, 56, 215); font-size: 20px; min-width: 100px; margin: 5px" type="button" @onclick="@Cancel">Cancel</button>
+    </div>
+</div>

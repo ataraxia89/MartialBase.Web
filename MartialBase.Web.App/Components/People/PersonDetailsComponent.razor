@@ -1,0 +1,63 @@
+﻿@inherits PersonDetailsComponentBase
+
+<div style="float: left; margin: 5px; padding: 10px; border: 1px solid #dcdcdc; border-radius: 25px; max-width: 30vw">
+    @if (IsLoading)
+    {
+        <div class="d-flex justify-content-center" style="margin: 10%">
+            <div style="text-align: center">
+                <span class="spinner-border spinner-border-sm" role="status" style="width: 25px; height: 25px;"></span>
+                <p>@LoadingMessage</p>
+            </div>
+        </div>
+    }
+    else
+    {
+        if (HasErrorMessage)
+        {
+            <div class="d-flex justify-content-center" style="margin: 10%">
+                <div style="text-align: center">
+                    <p>@ErrorMessage</p>
+                </div>
+            </div>
+        }
+        else
+        {
+            if (Person != null)
+            {
+                <table>
+                    <caption>Your Details</caption>
+                    <tbody>
+                        <tr>
+                            <td style="text-align: right; vertical-align: top">Name:</td>
+                            <td style="padding-left: 10px; vertical-align: top">@Person.FullName</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right; vertical-align: top">Age:</td>
+                            <td style="padding-left: 10px; vertical-align: top">@Person.Age</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right; vertical-align: top">Address:</td>
+                            <td style="padding-left: 10px; vertical-align: top">@Person.Address.FullAddress</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right; vertical-align: top">Email:</td>
+                            <td style="padding-left: 10px; vertical-align: top">@Person.Email</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right; vertical-align: top">Phone:</td>
+                            <td style="padding-left: 10px; vertical-align: top">@Person.MobileNo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <div class="d-flex justify-content-center" style="margin: 10%">
+                    <div style="text-align: center">
+                        <p>Failed to load person details</p>
+                    </div>
+                </div>
+            }
+        }
+    }
+</div>

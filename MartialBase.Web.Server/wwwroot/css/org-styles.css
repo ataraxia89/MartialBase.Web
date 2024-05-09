@@ -1,0 +1,50 @@
+﻿.sidebar-org-logo-div {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block
+}
+
+.sidebar-org-logo-square {
+    padding-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%
+}
+
+.sidebar-org-title-banner {
+    padding-bottom: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%
+}
+
+@media (max-height: 678.98px), (max-width: 767.98px) {
+    .sidebar-org-logo-div {
+        display: none
+    }
+
+    .sidebar-org-logo-square {
+        display: none
+    }
+
+    .sidebar-org-title-banner {
+        display: none
+    }
+}
+
+@media (min-height: 679px) and (min-width: 768px) {
+    .sidebar-org-logo-div {
+        display: block
+    }
+
+    .sidebar-org-logo-square {
+        display: block
+    }
+
+    .sidebar-org-title-banner {
+        display: block
+    }
+}

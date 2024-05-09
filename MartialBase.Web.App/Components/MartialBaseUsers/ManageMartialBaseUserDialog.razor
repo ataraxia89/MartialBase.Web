@@ -1,0 +1,75 @@
+﻿@inherits ManageMartialBaseUserDialogBase
+
+@if (IsLoading)
+{
+    <div class="d-flex justify-content-center" style="margin: 10%">
+        <div style="text-align: center">
+            <span class="spinner-border spinner-border-sm" role="status" style="width: 25px; height: 25px;"></span>
+            <p>@LoadingMessage</p>
+        </div>
+    </div>
+}
+else
+{
+    if (HasErrorMessage)
+    {
+        <div class="d-flex justify-content-center" style="margin: 10%">
+            <div style="text-align: center">
+                <p>@ErrorMessage</p>
+                <button class="btn btn-block btn-primary" @onclick="@HideError" style="color: rgb(255, 255, 255); background-color: rgb(49, 56, 215);" type="button">Close</button>
+            </div>
+        </div>
+    }
+    else
+    {
+        @if (ConfirmationMessageVisible)
+        {
+            <div class="alert @StatusClass">@ConfirmationMessage</div>
+        }
+
+        <div style="float: left; margin: 5px; border: 1px #d2d2d2 solid">
+            <fieldset style="padding: 5px">
+                <legend>User Management</legend>
+
+                <div class="form-group">
+                    @if (MartialBaseUser.AzureId == null)
+                    {
+                        <button class="btn btn-block btn-primary" disabled style="color: rgb(255, 255, 255); background-color: rgb(255, 94, 94);" type="button">(Locked Out)</button>
+                    }
+                    else
+                    {
+                        <button class="btn btn-block btn-primary" @onclick="@LockOutUser" style="color: rgb(255, 255, 255); background-color: rgb(255, 50, 50);" type="button">Lock Out User</button>
+                    }
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-block btn-primary" @onclick="@GetInvitationCode" style="color: rgb(255, 255, 255); background-color: rgb(49, 56, 215);" type="button">Get Invitation Code</button>
+                </div>
+            </fieldset>
+        </div>
+
+        <div style="float: left; margin: 5px; border: 1px #d2d2d2 solid">
+            <fieldset style="padding: 5px">
+                <legend>User Roles</legend>
+                
+                <form>
+                    @foreach (var userRole in UserRoles)
+                    {
+                        <label style="font-size: 20px">
+                            <input @bind="@userRole.Checked" id="@userRole.Id" type="checkbox" />
+                            &nbsp;@userRole.DisplayValue
+                        </label>
+                        <br />
+                    }
+
+                    <button class="btn btn-block btn-primary" style="color: rgb(255, 255, 255); background-color: rgb(49, 56, 215);" type="button" @onclick="@SaveUserRoles">Save User Roles</button>
+                </form>
+            </fieldset>
+        </div>
+        
+        <div class="form-group">
+            <button class="btn btn-block btn-primary" style="color: rgb(255, 255, 255); background-color: rgb(49, 56, 215);" type="button" @onclick="@Cancel">Cancel</button>
+        </div>
+
+    }
+}

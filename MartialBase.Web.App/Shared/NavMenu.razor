@@ -1,0 +1,56 @@
+﻿@inherits NavMenuBase
+
+<head>
+    <link href="/css/org-styles.css" rel="stylesheet" />
+</head>
+
+<div class="navbar navbar-dark pl-4 top-row">
+    <a class="navbar-brand" href=""><img class="navbar-brand-img" src="img/MartialBase_White.png"/></a>
+    <button class="navbar-toggler" @onclick="ToggleNavMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <ul class="flex-column nav">
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span aria-hidden="true" class="oi"></span> Home
+            </NavLink>
+
+            <NavLink class="nav-link" href="/users" Match="NavLinkMatch.All">
+                <span aria-hidden="true" class="oi"></span> Manage Users
+            </NavLink>
+
+            <NavLink class="nav-link" href="/organisations" Match="NavLinkMatch.All">
+                <span aria-hidden="true" class="oi"></span> Organisations
+            </NavLink>
+
+            <NavLink class="nav-link" href="/schools" Match="NavLinkMatch.All">
+                <span aria-hidden="true" class="oi"></span> Schools
+            </NavLink>
+
+            <NavLink class="nav-link" href="/students" Match="NavLinkMatch.All">
+                <span aria-hidden="true" class="oi"></span> Students
+            </NavLink>
+
+            <AuthorizeView>
+                <Authorized>
+                    <NavLink class="nav-link" href="/MicrosoftIdentity/Account/SignOut" Match="NavLinkMatch.All">
+                        <span aria-hidden="true" class="oi"></span> Log Out
+                    </NavLink>
+                </Authorized>
+                <NotAuthorized>
+                    <NavLink class="nav-link" href="/MicrosoftIdentity/Account/SignIn" Match="NavLinkMatch.All">
+                        <span aria-hidden="true" class="oi"></span> Log In
+                    </NavLink>
+                </NotAuthorized>
+            </AuthorizeView>
+        </li>
+    </ul>
+    <div class="sidebar-org-logo-div">
+        <img src="img/org-logo-square.png" alt="Organisation logo" class="sidebar-org-logo-square" />
+        <img src="img/org-title-banner.png" alt="Organisation title" class="sidebar-org-title-banner" />
+    </div>
+    <p class="container footer" style="color: white; height: 40px">&copy; 2020 - Martialtech&reg;</p>
+</div>
